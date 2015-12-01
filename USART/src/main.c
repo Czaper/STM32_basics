@@ -4,7 +4,7 @@
  * @author  Konrad
  * @version V1.0
  * @date    11-11-2015
- * @brief   UART I/O.
+ * @brief   UART I/O with send_char().
  ******************************************************************************
  */
 
