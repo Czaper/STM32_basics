@@ -51,6 +51,6 @@ int main(void)
 
 	while (1)
 	{
-		printf("Hellow World!\n");
+		printf("Hello World!\n");
 	}
 }
