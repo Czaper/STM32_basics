@@ -35,6 +35,9 @@ int main(void)
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
 	RCC_APB2PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
 
+	GPIO_PinAFConfig(GPIOA, GPIO_PinSource3, GPIO_AF_7); //RX, via M00118585.pdf
+	GPIO_PinAFConfig(GPIOA, GPIO_PinSource2, GPIO_AF_7); //TX, via M00118585.pdf
+
 	GPIO_StructInit(&gpio):
 	gpio.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3;
 	gpio.GPIO_Mode_AF; //Alternate function 7 for UART
