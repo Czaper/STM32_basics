@@ -21,7 +21,7 @@ void send_char(char c)
 int __io_putchar(int c)
 {
 	if (c=='\n')
-		send_char('\r') //carriage return to remove starirs effect
+		send_char('\r'); //carriage return to remove starirs effect
 	send_char(c);
 	return c;
 }
@@ -33,16 +33,16 @@ int main(void)
 
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB | RCC_AHBPeriph_GPIOC | RCC_AHBPeriph_GPIOD, ENABLE);
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
-	RCC_APB2PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
 
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource3, GPIO_AF_7); //RX, via M00118585.pdf
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource2, GPIO_AF_7); //TX, via M00118585.pdf
 
-	GPIO_StructInit(&gpio):
+	GPIO_StructInit(&gpio);
 	gpio.GPIO_Pin = GPIO_Pin_2 | GPIO_Pin_3;
-	gpio.GPIO_Mode_AF; //Alternate function 7 for UART
-	gpio.GPIO_OType = GPIO_OType.PP;
-	gpio.GPIO_PuPd = GPIO_PuPd_PP;
+	gpio.GPIO_Mode= GPIO_Mode_AF;  //Alternate function 7 for UART
+	gpio.GPIO_OType = GPIO_OType_PP;
+	gpio.GPIO_PuPd = GPIO_PuPd_UP;
 	gpio.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOA, &gpio);//UART pins init
 
