@@ -1,16 +1,16 @@
 /**
   ******************************************************************************
-  * @file    main.c
-  * @author  Ac6
+	* @file    main.c
+  * @author  Konrad
   * @version V1.0
-  * @date    01-December-2013
-  * @brief   Default main function.
+  * @date    02-12-2015
+  * @brief   ADC.
   ******************************************************************************
 */
 
 
 #include "stm32f30x.h"
-			
+
 
 int main(void)
 {
